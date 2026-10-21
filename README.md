@@ -106,15 +106,6 @@ Deployed to GitHub Pages via the workflow in `.github/workflows/deploy.yml`. On 
 
 To enable: repo → Settings → Pages → Source → GitHub Actions.
 
-## Known Limitations
-
-- **Read-only** — the mock API is GET-only, so there's no creating, editing, or updating order statuses in the app.
-- **No automated tests** — verification was manual plus `npm run lint` / `npm run build`.
-- **API key is in the client bundle** — fine for this mock assessment, but not acceptable for a real production app (would move to a backend/proxy).
-- **Detail modal uses list-row data** — it doesn't refetch the single-order endpoint, so any field not included in the list response won't show.
-- **No offline/caching** — every filter/page change hits the network; no service worker or query cache.
-- **Meta (statuses/sites) loads once** — if it fails on mount, the dropdowns stay empty until refresh.
-
 ## Notes
 
 - `node_modules/` and `dist/` are gitignored — run `npm install` and `npm run build` after cloning.
